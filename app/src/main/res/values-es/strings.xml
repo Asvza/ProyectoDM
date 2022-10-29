@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto DM</string>
+    <string name="title_active_login">Iniciar Sesión</string>
+    <string name="password">Contraseña</string>
+    <string name="password_confirm">Confirmar Contraseña</string>
+    <string name="forgotpassword">¿Olvidaste tu Contraseña?</string>
+    <string name="register">Registrate</string>
+    <string name="notaccount">¿No tienes Cuenta?</string>
+    <string name="email_address">Dirección Email</string>
+    <string name="language">Spanish</string>
+    <string name="full_name">Nombre Completo</string>
+    <string name="Age">Edad</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="join">Iniciar Videollamada</string>
+    <string name="buttonchatvideo">Video Llamada</string>
+    <string name="pantalla_register">Registrar Usuario</string>
+    <string name="write_message">Escribe un Mensaje</string>
+    <string name="send_message">Enviar</string>
+    <string name="other_users">Ver Usuarios(Videochat)</string>
+    <string name="birth_date">Fecha de Nacimiento</string>
+    <string name="user_role1">Admin</string>
+    <string name="user_role2">Normal</string>
+    <string name="Welcome">Hola, Bienvenido</string>
+    <string name="return_menu">Regresar a mensajes</string>
+    <string name="secret_code">Ingresa el Código Secreto</string>
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/idCorreoLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"/>
+    <EditText
+        android:id="@+id/idContraseñaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/idLoginLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#9A5ADB"
+        android:text="@string/title_active_login"
+        android:textColor="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom"
+        android:layout_weight="1">
+
+
+        <Button
+            android:id="@+id/idRegistroLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9A5ADB"
+            android:textColor="#FFFFFF"
+            android:text="@string/register" />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        />
+
+
+</LinearLayout>

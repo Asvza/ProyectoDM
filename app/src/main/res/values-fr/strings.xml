@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Projet M</string>
+    <string name="title_active_login">Connexion</string>
+    <string name="password">le mot de passe</string>
+    <string name="password_confirm">Confirmez le mot de passe</string>
+    <string name="forgotpassword">Mot de passe oublié</string>
+    <string name="register">S inscrire</string>
+    <string name="notaccount">Vous n\'avez pas de compte?</string>
+    <string name="email_address">Adresse e-mail</string>
+    <string name="language">Français</string>
+    <string name="full_name">Nom et prénom</string>
+    <string name="Age">Âge</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="join">Démarrer l\'appel vidéo</string>
+    <string name="buttonchatvideo">\'appel vidéo</string>
+    <string name="pantalla_register">Enregistrer l\'utilisateur</string>
+    <string name="write_message">Tapez un message</string>
+    <string name="send_message">Envoyer</string>
+    <string name="other_users">Autres utilisateurs (Chat/Vidéo)</string>
+    <string name="birth_date">Date de naissance</string>
+    <string name="user_role1">Admin</string>
+    <string name="user_role2">Normal</string>
+    <string name="Welcome">Salut, bienvenue</string>
+    <string name="return_menu">Retour aux messages</string>
+    <string name="secret_code">Entrez le code secret</string>
+
+
+
+
+
+</resources>

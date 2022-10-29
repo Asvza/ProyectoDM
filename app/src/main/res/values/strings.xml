@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Project DM</string>
+    <string name="title_active_login">Login</string>
+    <string name="password">Password</string>
+    <string name="password_confirm">Confirm Password</string>
+    <string name="forgotpassword">Forgot Password</string>
+    <string name="register">Register</string>
+    <string name="notaccount">Don\'t have an account?</string>
+    <string name="email_address">Email Address</string>
+    <string name="language">English</string>
+    <string name="full_name">Full name</string>
+    <string name="Age">Age</string>
+    <string name="logout">Logout</string>
+    <string name="join">Start VideoCall</string>
+    <string name="buttonchatvideo">Video Call</string>
+    <string name="pantalla_register">Register User</string>
+    <string name="write_message">Type a message</string>
+    <string name="send_message">Send</string>
+    <string name="other_users">Other Users (Chat/Video)</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="user_role1">Admin</string>
+    <string name="user_role2">Normal</string>
+    <string name="Welcome">Hi, Welcome</string>
+    <string name="return_menu">Return to messages</string>
+    <string name="secret_code">Enter Secret Code</string>
+</resources>
