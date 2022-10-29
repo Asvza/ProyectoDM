@@ -64,12 +64,17 @@
         android:id="@+id/btnVerUsuarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/other_users"/>
+        android:backgroundTint="#9A5ADB"
+        android:textColor="#FFFFFF"
+
+        android:text="@string/other_users"/>
     <Button
         android:id="@+id/btnCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/logout"/>
+        android:backgroundTint="#9A5ADB"
+        android:textColor="#FFFFFF"
+        android:text="@string/logout"/>
 
 
 
