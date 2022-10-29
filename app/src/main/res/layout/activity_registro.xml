@@ -77,7 +77,8 @@
                 android:id="@+id/idRegistroRegistrar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/register"/>
+                android:backgroundTint="#9A5ADB"
+                android:text="@string/register"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -19,8 +19,8 @@
     <string name="send_message">Enviar</string>
     <string name="other_users">Ver Usuarios(Videochat)</string>
     <string name="birth_date">Fecha de Nacimiento</string>
-    <string name="user_role1">Admin</string>
-    <string name="user_role2">Normal</string>
+    <string name="user_role1">Vendedor</string>
+    <string name="user_role2">Comprador</string>
     <string name="Welcome">Hola, Bienvenido</string>
     <string name="return_menu">Regresar a mensajes</string>
     <string name="secret_code">Ingresa el Código Secreto</string>

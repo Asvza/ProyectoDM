@@ -18,8 +18,8 @@
     <string name="send_message">Send</string>
     <string name="other_users">Other Users (Chat/Video)</string>
     <string name="birth_date">Birth Date</string>
-    <string name="user_role1">Admin</string>
-    <string name="user_role2">Normal</string>
+    <string name="user_role1">Seller</string>
+    <string name="user_role2">Buyer</string>
     <string name="Welcome">Hi, Welcome</string>
     <string name="return_menu">Return to messages</string>
     <string name="secret_code">Enter Secret Code</string>
