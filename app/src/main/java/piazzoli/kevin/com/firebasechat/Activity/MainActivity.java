@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent pantsIntent = new Intent(getBaseContext(), ClothesActivity.class);
+                Intent pantsIntent = new Intent(MainActivity.this, ClothesActivity.class);
                 pantsIntent.putExtra("category", "Pants");
                 startActivity(pantsIntent);
                 overridePendingTransition(R.transition.slide_in_right, R.transition.slide_out_left);

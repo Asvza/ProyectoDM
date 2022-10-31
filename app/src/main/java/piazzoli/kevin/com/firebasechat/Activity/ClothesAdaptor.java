@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import piazzoli.kevin.com.firebasechat.R;
+
 public class ClothesAdaptor extends RecyclerView.Adapter<ClothesAdaptor.ViewHolder> implements Filterable {
 
     public static final String EXTRA_ITEM = "item";

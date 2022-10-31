@@ -19,6 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MenuActivity"></activity>
+        <activity android:name=".Activity.ClothesActivity"></activity>
+        <activity android:name=".Activity.DetailsActivity"></activity>
+        <activity android:name=".Activity.MainActivity"></activity>
         <activity android:name=".Activity.VerUsuariosActivity"></activity>
         <activity android:name=".Activity.RegistroActivity"></activity>
         <activity android:name=".Activity.MensajeriaActivity"></activity>

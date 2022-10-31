@@ -75,6 +75,11 @@
         android:textColor="#FFFFFF"
         />
 
+    <Button
+        android:id="@+id/btnCompras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compras" />
 
 
 </LinearLayout>
