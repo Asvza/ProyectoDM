@@ -27,10 +27,9 @@
 
         <Button
             android:id="@+id/btn_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="next"
-            android:text="@string/buttonchatvideo"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/videocall_icon"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
 
