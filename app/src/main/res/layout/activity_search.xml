@@ -16,7 +16,9 @@
         android:layout_height="wrap_content"
         android:queryHint="SEARCH STORE CATALOGUE"
         android:iconifiedByDefault="false"
+
         android:textColor="#FFFFFF">
+
     </SearchView>
 
 
@@ -24,6 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="Sorry, we were not able to find what you were searching for."
+
+        android:textColor="@color/black"
+
         android:textSize="20sp"
         android:visibility="gone"
         android:gravity="center"

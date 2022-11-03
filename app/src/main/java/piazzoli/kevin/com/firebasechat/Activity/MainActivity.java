@@ -3,6 +3,7 @@ package piazzoli.kevin.com.firebasechat.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import piazzoli.kevin.com.firebasechat.R;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView hotDeals;
+    private ImageView goBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         CardView pantsCardView = (CardView) findViewById(R.id.cardPants);
         CardView jacketsCardView = (CardView) findViewById(R.id.cardJackets);
         final SearchView searchView = (SearchView) findViewById(R.id.searchBar);
+        goBackBtn = findViewById(R.id.goBackBtn);
 
 
         List<Clothes> salesList = ClothesProvider.getSaleitems();
@@ -37,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
         hotDeals = (RecyclerView) findViewById(R.id.top_picks);
         hotDeals.setAdapter(DealsAdapter);
         hotDeals.setLayoutManager(horizontalLayoutManager);
+
+        goBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //onlclick listeners to send an intent to the clothes activity depending on what cardview is selected
         t_ShirtsCardView.setOnClickListener(new View.OnClickListener() {
