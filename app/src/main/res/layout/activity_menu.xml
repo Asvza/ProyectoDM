@@ -8,25 +8,6 @@
     android:background="#ECDBFF">
 
 
-    <!--Modificar codigo para traer informacion de usuario de firebase-->
-    <TextView
-        android:id="@+id/emailAddressTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/email_address"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/emailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:textSize="20sp"
-
-
     <TextView
         android:id="@+id/TextView"
         android:layout_width="wrap_content"
@@ -74,16 +55,7 @@
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
 
-    <!--Cambiar botones en forma de navbar para dar estilo-->
-    <Button
-        android:id="@+id/btnVerUsuarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#9A5ADB"
-        android:text="@string/other_users"
-
-
-            <LinearLayout
+             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
@@ -257,15 +229,6 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-    <Button
-        android:id="@+id/btnCompras"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#9A5ADB"
-        android:text="Compras"
-        android:textColor="#FFFFFF"
-        />
-
 
     </GridLayout>
 
