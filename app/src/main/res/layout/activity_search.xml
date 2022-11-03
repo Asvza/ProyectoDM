@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Activity.SearchActivity"
-    android:background="@color/colorPrimary">
+    android:background="#9A5ADB">
 
 
     <SearchView
@@ -16,7 +16,9 @@
         android:layout_height="wrap_content"
         android:queryHint="SEARCH STORE CATALOGUE"
         android:iconifiedByDefault="false"
-        >
+
+        android:textColor="#FFFFFF">
+
     </SearchView>
 
 
@@ -24,13 +26,16 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="Sorry, we were not able to find what you were searching for."
+
         android:textColor="@color/black"
+
         android:textSize="20sp"
         android:visibility="gone"
         android:gravity="center"
         android:id="@+id/empty_filter_text"
         android:paddingTop="16dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="8dp"
+        android:textColor="#FFFFFF">
 
     </TextView>
 
@@ -39,6 +44,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="10dp"
         android:id="@+id/searchList">
     </androidx.recyclerview.widget.RecyclerView>
