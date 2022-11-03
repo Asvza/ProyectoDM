@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,30 +27,28 @@ import piazzoli.kevin.com.firebasechat.R;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button btnVerUsuarios;
-    private Button btnCerrarSesion;
-    private Button btnCompras;
+    private CardView cardCompras;
+    private CardView cardVideollamada;
+    private CardView cardPerfil;
+    private CardView cardAjustes;
+    private CardView cardCerrarSesion;
 
     private FirebaseUser user;
     private DatabaseReference reference;
-
     private String userID;
-
-
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        btnVerUsuarios = findViewById(R.id.btnVerUsuarios);
-        btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
-        btnCompras = findViewById(R.id.btnCompras);
+        cardCompras = findViewById(R.id.cardCompras);
+        cardVideollamada = findViewById(R.id.cardVideollamada);
+        cardPerfil = findViewById(R.id.cardPerfil);
+        cardAjustes = findViewById(R.id.cardAjustes);
+        cardCerrarSesion = findViewById(R.id.cardCerrarsesion);
 
-
-        btnCompras.setOnClickListener(new View.OnClickListener() {
+        cardCompras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, MainActivity.class);
@@ -57,19 +57,36 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
-        btnVerUsuarios.setOnClickListener(new View.OnClickListener() {
+        cardVideollamada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this,VerUsuariosActivity.class);
+                Intent intent = new Intent(MenuActivity.this, VerUsuariosActivity.class);
                 startActivity(intent);
             }
         });
 
-        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+        cardPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardAjustes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                returnLogin();
+                Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -77,55 +94,6 @@ public class MenuActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Usuarios");
         userID = user.getUid();
-
-        final TextView fullNameTextView = (TextView) findViewById(R.id.fullName);
-        final TextView emailTextView = (TextView) findViewById(R.id.emailAddress);
-        final TextView userTextView = (TextView) findViewById(R.id.user);
-
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                User userProfile = snapshot.getValue(User.class);
-
-                if (userProfile != null)
-                {
-
-                    String fullName = userProfile.fullName;
-                    String email = userProfile.email;
-                    String user = userProfile.user;
-                    fullNameTextView.setText(fullName);
-                    emailTextView.setText(email);
-                    userTextView.setText(user);
-
-                }
-                }
-
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MenuActivity.this, "Something wrong happened", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
     }
-
-    private void returnLogin(){
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(UsuarioDAO.getInstancia().isUsuarioLogeado()){
-            //el usuario esta logeado y hacemos algo
-        }else{
-            returnLogin();
-        }
-    }
-
 
 }
