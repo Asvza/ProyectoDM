@@ -40,7 +40,7 @@
         android:id="@+id/idLoginLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
+        android:backgroundTint="#9A5ADB"
         android:text="@string/title_active_login"
         android:textColor="#FFFFFF" />
 

@@ -10,7 +10,9 @@ android:padding="16dp"
 android:divider="@android:color/transparent"
 android:dividerHeight="10sp"
 android:id="@+id/listView_clothes"
+    android:textColor="#FFFFFF"
     android:background="#9A5ADB"
+
 
     >
 
