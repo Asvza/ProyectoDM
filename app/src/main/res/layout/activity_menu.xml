@@ -5,6 +5,9 @@
     android:gravity="center"
     android:orientation="vertical">
 
+
+
+    <!--Modificar codigo para traer informacion de usuario de firebase-->
     <TextView
         android:id="@+id/emailAddressTitle"
         android:layout_width="match_parent"
@@ -56,7 +59,7 @@
         android:layout_marginLeft="16dp"
         android:textSize="20sp" />
 
-
+    <!--Cambiar botones en forma de navbar para dar estilo-->
     <Button
         android:id="@+id/btnVerUsuarios"
         android:layout_width="wrap_content"
@@ -79,7 +82,10 @@
         android:id="@+id/btnCompras"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compras" />
+        android:backgroundTint="#9A5ADB"
+        android:text="Compras"
+        android:textColor="#FFFFFF"
+        />
 
 
 </LinearLayout>
