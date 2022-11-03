@@ -19,6 +19,7 @@
         android:layout_below="@id/hot_deals_image"
         android:text="dummy"
         android:textSize="18sp"
+        android:textColor="@color/black"
         android:textStyle="bold"/>
 
     <TextView
@@ -29,6 +30,8 @@
         android:layout_marginTop="2dp"
         android:id="@+id/hot_deals_price"
         android:text="Price"
+        android:textColor="@color/black"
+
         />
 
 
