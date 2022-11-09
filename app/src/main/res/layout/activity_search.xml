@@ -14,14 +14,15 @@
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="SEARCH STORE CATALOGUE">
+        android:queryHint="SEARCH STORE CATALOGUE"
+        android:iconifiedByDefault="false">
     </SearchView>
 
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Sorry, we were not able to find what you were searching for."
+        android:text="@string/sorry_we_were_not_able"
         android:textSize="20sp"
         android:visibility="gone"
         android:gravity="center"

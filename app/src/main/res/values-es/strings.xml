@@ -7,7 +7,7 @@
     <string name="forgotpassword">¿Olvidaste tu Contraseña?</string>
     <string name="register">Registrate</string>
     <string name="notaccount">¿No tienes Cuenta?</string>
-    <string name="email_address">Dirección Email</string>
+    <string name="email_address">Dirección de Email</string>
     <string name="language">Spanish</string>
     <string name="full_name">Nombre Completo</string>
     <string name="Age">Edad</string>
@@ -24,5 +24,28 @@
     <string name="Welcome">Hola, Bienvenido</string>
     <string name="return_menu">Regresar a mensajes</string>
     <string name="secret_code">Ingresa el Código Secreto</string>
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="para_usar">Para usar nuestra aplicación inicia sesión</string>
+    <string name="email">Email</string>
+    <string name="minimum">Mínimo seis caracteres</string>
+    <string name="register_">Registrarse</string>
+    <string name="enter_your_full_name">Ingresa tu nombre completo</string>
+    <string name="enter_your_email">Ingresa tu correo electrónico</string>
+    <string name="enter_your_password">Ingresa tu contraseña</string>
+    <string name="confirm_your_password">Confirma tu contraseña</string>
+    <string name="date_of_birth">Fecha de nacimiento</string>
+    <string name="create_your_account">¡Crea tu cuenta en menos de un minuto!</string>
+    <string name="shopping">Compras</string>
+    <string name="video_chat">Video chat</string>
+    <string name="my_profile">Mi perfil</string>
+    <string name="settings">Ajustes</string>
+    <string name="log_out">Cerrar\nsesión</string>
+    <string name="sorry_we_were_not_able">Lo sentimos, no pudimos encontrar lo que estabas buscando.</string>
+    <string name="change_language">Cambiar idioma</string>
+    <string name="name">Nombre</string>
+    <string name="telephone">Teléfono</string>
+    <string name="type_of_user">Tipo de usuario</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="save">Guardar</string>
 
 </resources>

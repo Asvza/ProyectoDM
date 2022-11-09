@@ -24,7 +24,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Mi perfil"
+            android:text="@string/my_profile"
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Nombre"
+            android:text="@string/name"
             android:textColor="#9A5ADB"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Nombre"
+            android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -119,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Edad"
+            android:text="@string/Age"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Teléfono"
+            android:text="@string/telephone"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -203,7 +203,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -246,7 +246,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Tipo de usuario"
+            android:text="@string/type_of_user"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -279,7 +279,7 @@
             android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:paddingLeft="10dp"
-            android:text="Editar Perfil"
+            android:text="@string/edit_profile"
             android:textColor="#9A5ADB"
             android:textSize="18dp"
             android:textStyle="bold"></Button>
@@ -303,7 +303,7 @@
             android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:paddingLeft="10dp"
-            android:text="Guardar"
+            android:text="@string/save"
             android:textColor="#71BEC2"
             android:textSize="18dp"
             android:textStyle="bold"></Button>

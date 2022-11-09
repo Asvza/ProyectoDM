@@ -26,7 +26,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-medium"
-            android:text="Regístrate"
+            android:text="@string/register"
             android:gravity="center"
             android:textColor="#000000"
             android:textSize="34sp"/>
@@ -37,7 +37,7 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:text="¡Crea tu cuenta en menos de un minuto!"
+            android:text="@string/create_your_account"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -56,7 +56,7 @@
             android:background="@color/white"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:hint="Ingresa tu nombre completo"
+            android:hint="@string/enter_your_full_name"
             android:inputType="textPersonName"
             android:padding="15dp" />
 
@@ -71,7 +71,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:elevation="2dp"
-            android:hint="Ingresa tu correo electrónico"
+            android:hint="@string/enter_your_email"
             android:inputType="textEmailAddress"
             android:padding="15dp" />
 
@@ -86,7 +86,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:elevation="2dp"
-            android:hint="Ingresa tu contraseña"
+            android:hint="@string/enter_your_password"
             android:inputType="textPassword"
             android:padding="15dp" />
 
@@ -101,7 +101,7 @@
             android:textColorHint="@color/black"
             android:elevation="2dp"
             android:ems="10"
-            android:hint="Confirma tu contraseña"
+            android:hint="@string/confirm_your_password"
             android:inputType="textPassword"
             android:padding="15dp" />
 
@@ -117,7 +117,7 @@
             android:background="@color/white"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:hint="Fecha de nacimiento"
+            android:hint="@string/date_of_birth"
             android:inputType="date"
             android:clickable="true"
             android:focusable="false"
@@ -162,7 +162,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:backgroundTint="#9A5ADB"
-            android:text="Registrarse"
+            android:text="@string/register_"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
