@@ -85,7 +85,7 @@
             android:dividerHeight="10sp"
             android:id="@+id/top_picks"
             android:paddingBottom="8dp"
-            android:textColor="#FFFFFF">
+            android:textColor="@color/black" >
 
 
         </androidx.recyclerview.widget.RecyclerView>

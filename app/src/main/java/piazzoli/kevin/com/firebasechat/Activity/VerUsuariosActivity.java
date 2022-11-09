@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -23,7 +24,7 @@ import piazzoli.kevin.com.firebasechat.R;
 import piazzoli.kevin.com.firebasechat.Utilidades.Constantes;
 
 public class VerUsuariosActivity extends AppCompatActivity {
-
+    private ImageView goBackBtn;
     private RecyclerView rvUsuarios;
     private FirebaseRecyclerAdapter adapter;
 
@@ -31,11 +32,21 @@ public class VerUsuariosActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_usuarios);
-
+        goBackBtn = findViewById(R.id.goBackBtn);
         rvUsuarios = findViewById(R.id.rvUsuarios);
+
+
+        goBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(VerUsuariosActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvUsuarios.setLayoutManager(linearLayoutManager);
+
 
         Query query = FirebaseDatabase.getInstance()
                 .getReference()

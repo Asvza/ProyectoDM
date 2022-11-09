@@ -3,7 +3,7 @@
 
     <string name="app_name">Projet M</string>
     <string name="title_active_login">Connexion</string>
-    <string name="password">le mot de passe</string>
+    <string name="password">Le mot de passe</string>
     <string name="password_confirm">Confirmez le mot de passe</string>
     <string name="forgotpassword">Mot de passe oublié</string>
     <string name="register">S inscrire</string>
@@ -25,9 +25,29 @@
     <string name="Welcome">Salut, bienvenue</string>
     <string name="return_menu">Retour aux messages</string>
     <string name="secret_code">Entrez le code secret</string>
-
-
-
+    <string name="bienvenido">¡Bienvenue!</string>
+    <string name="para_usar">Pour utiliser notre application, connectez-vous</string>
+    <string name="email">Email</string>
+    <string name="minimum">Au moins six caractères</string>
+    <string name="register_">S inscrirer</string>
+    <string name="enter_your_full_name">Entrez votre nom complet</string>
+    <string name="enter_your_email">Entrer votre Email</string>
+    <string name="enter_your_password">Tapez votre mot de passe</string>
+    <string name="confirm_your_password">Confirmer votre mot de passe</string>
+    <string name="date_of_birth">Date de naissance</string>
+    <string name="create_your_account">Créez votre compte en moins d'une minute!</string>
+    <string name="shopping">Achats</string>
+    <string name="video_chat">Chat vidéo</string>
+    <string name="my_profile">Mon profil</string>
+    <string name="settings">Réglages</string>
+    <string name="log_out">Se déconnecter</string>
+    <string name="sorry_we_were_not_able">Désolé, nous n'avons pas pu trouver ce que vous cherchiez.</string>
+    <string name="change_language">Changer de langue</string>
+    <string name="name">Nom</string>
+    <string name="telephone">Téléphone</string>
+    <string name="type_of_user">Type d'utilisateur</string>
+    <string name="edit_profile">Editer le profil</string>
+    <string name="save">Sauvegarder</string>
 
 
 </resources>
