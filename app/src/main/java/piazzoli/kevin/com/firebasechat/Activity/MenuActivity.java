@@ -33,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
     private CardView cardAjustes;
     private CardView cardCerrarSesion;
 
+
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -47,6 +48,7 @@ public class MenuActivity extends AppCompatActivity {
         cardPerfil = findViewById(R.id.cardPerfil);
         cardAjustes = findViewById(R.id.cardAjustes);
         cardCerrarSesion = findViewById(R.id.cardCerrarsesion);
+
 
         cardCompras.setOnClickListener(new View.OnClickListener() {
             @Override
