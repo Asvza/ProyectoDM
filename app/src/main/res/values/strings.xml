@@ -46,4 +46,8 @@
     <string name="type_of_user">Type of user</string>
     <string name="edit_profile">Edit profile</string>
     <string name="save">Save</string>
+    <string name="adminlog">If you are an administrator login here ✓ </string>
+    <string name="AdminSpace">Administrators Login</string>
+    <string name="ContactAdmin">Contact Seller</string>
+
 </resources>

@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent tShirtsIntent = new Intent(getBaseContext(), ClothesActivity.class);
+               Intent tShirtsIntent = new Intent(getBaseContext(), ClothesActivity.class);
+               // Intent tShirtsIntent = new Intent(MainActivity.this, ClothesActivity.class);
                 tShirtsIntent.putExtra("category", "TShirt");
                 startActivity(tShirtsIntent);
                 overridePendingTransition(R.transition.slide_in_right, R.transition.slide_out_left);
@@ -66,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent jacketsIntent = new Intent(getBaseContext(), ClothesActivity.class);
+               Intent jacketsIntent = new Intent(getBaseContext(), ClothesActivity.class);
+               // Intent jacketsIntent = new Intent(MainActivity.this, ClothesActivity.class);
                 jacketsIntent.putExtra("category", "Jackets");
                 startActivity(jacketsIntent);
                 overridePendingTransition(R.transition.slide_in_right, R.transition.slide_out_left);
