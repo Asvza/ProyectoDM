@@ -31,7 +31,7 @@ public class ClothesActivity extends AppCompatActivity {
             //list of T-Shirt items are generated to this list
             List<Clothes> TShirtsList = ClothesProvider.getTShirts();
             //adaptor is used to convert the list into views to the specified layout structure
-            final ClothesAdaptor itemsAdapter = new ClothesAdaptor(this, R.layout.clothes_list_view_item, TShirtsList);
+            final ClothesAdaptor itemsAdapter = new ClothesAdaptor(this, R.layout.view_items, TShirtsList);
             //Recycler view uses the adaptor to generate the list of individual card views
             lvClothes = (RecyclerView) findViewById(R.id.listView_clothes);
             lvClothes.setAdapter(itemsAdapter);
@@ -44,7 +44,7 @@ public class ClothesActivity extends AppCompatActivity {
         } else if (Category.equals("Pants")){
 
             List<Clothes> PantsList = ClothesProvider.getPants();
-            ClothesAdaptor itemsAdapter = new ClothesAdaptor(this, R.layout.clothes_list_view_item, PantsList);
+            ClothesAdaptor itemsAdapter = new ClothesAdaptor(this, R.layout.view_items, PantsList);
             lvClothes = (RecyclerView) findViewById(R.id.listView_clothes);
             lvClothes.setAdapter(itemsAdapter);
             lvClothes.setLayoutManager(new LinearLayoutManager(this));
@@ -53,7 +53,7 @@ public class ClothesActivity extends AppCompatActivity {
         }else if (Category.equals("Jackets")) {
 
             List<Clothes> JacketsList = ClothesProvider.getJackets();
-            ClothesAdaptor itemsAdapter = new ClothesAdaptor(this, R.layout.clothes_list_view_item, JacketsList);
+            ClothesAdaptor itemsAdapter = new ClothesAdaptor(this, R.layout.view_items, JacketsList);
             lvClothes = (RecyclerView) findViewById(R.id.listView_clothes);
             lvClothes.setAdapter(itemsAdapter);
             lvClothes.setLayoutManager(new LinearLayoutManager(this));
