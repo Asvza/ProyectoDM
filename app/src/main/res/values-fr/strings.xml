@@ -35,7 +35,7 @@
     <string name="enter_your_password">Tapez votre mot de passe</string>
     <string name="confirm_your_password">Confirmer votre mot de passe</string>
     <string name="date_of_birth">Date de naissance</string>
-    <string name="create_your_account">Créez votre compte en moins d une minute!</string>
+    <string name="create_your_account">Créez votre compte en moins d\'une minute!</string>
     <string name="shopping">Achats</string>
     <string name="video_chat">Chat vidéo</string>
     <string name="my_profile">Mon profil</string>
@@ -48,6 +48,9 @@
     <string name="type_of_user">Type d utilisateur</string>
     <string name="edit_profile">Editer le profil</string>
     <string name="save">Sauvegarder</string>
+    <string name="adminlog">Si vous êtes un administrateur, connectez-vous ici✓ </string>
+    <string name="AdminSpace">Connexion des administrateurs</string>
+    <string name="ContactAdmin">Contacter le vendeur</string>
 
 
 </resources>

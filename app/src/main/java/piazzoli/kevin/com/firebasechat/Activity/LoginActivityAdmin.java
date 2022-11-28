@@ -6,8 +6,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,8 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,7 +32,7 @@ import piazzoli.kevin.com.firebasechat.R;
  * Created by user on 19/02/2018. 19
  */
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivityAdmin extends AppCompatActivity {
 
     Spinner spinner;
     public static final String [] languages = {"Select Language", "English", "French", "Spanish"};
@@ -40,12 +40,11 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtCorreo,txtContraseña;
     private Button btnLogin,btnRegistro;
     private FirebaseAuth mAuth;
-    private TextView txtAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_admin);
 
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, languages);
@@ -60,19 +59,19 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (selectedLang.equals("English")){
 
-                    setLocal(LoginActivity.this, "en");
+                    setLocal(LoginActivityAdmin.this, "en");
                     finish();
                     startActivity(getIntent());
 
 
                 }else if (selectedLang.equals("Spanish")){
-                    setLocal(LoginActivity.this, "es");
+                    setLocal(LoginActivityAdmin.this, "es");
                     finish();
                     startActivity(getIntent());
 
                 }
                 else if ((selectedLang.equals("French"))){
-                    setLocal(LoginActivity.this, "fr");
+                    setLocal(LoginActivityAdmin.this, "fr");
                     finish();
                     startActivity(getIntent());
                 }
@@ -91,15 +90,7 @@ public class LoginActivity extends AppCompatActivity {
         txtCorreo = (EditText) findViewById(R.id.idCorreoLogin);
         txtContraseña = (EditText) findViewById(R.id.idContraseñaLogin);
         btnLogin = (Button) findViewById(R.id.idLoginLogin);
-        btnRegistro = (Button) findViewById(R.id.idRegistroLogin);
-        txtAdmin = (TextView) findViewById(R.id.AdminLogin);
-
-        txtAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, LoginActivityAdmin.class));
-            }
-        });
+        //btnRegistro = (Button) findViewById(R.id.idRegistroLogin);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -110,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(isValidEmail(correo) && validarContraseña()){
                     String contraseña = txtContraseña.getText().toString();
                     mAuth.signInWithEmailAndPassword(correo, contraseña)
-                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            .addOnCompleteListener(LoginActivityAdmin.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
@@ -120,30 +111,25 @@ public class LoginActivity extends AppCompatActivity {
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                         if (user.isEmailVerified()){
                                             //redirect to user profile
-                                            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                            startActivity(new Intent(LoginActivityAdmin.this, MenuActivityAdmin.class));
                                         }else{
                                             user.sendEmailVerification();
-                                            Toast.makeText(LoginActivity.this, "Check ur email to verify account", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(LoginActivityAdmin.this, "Check ur email to verify account", Toast.LENGTH_LONG).show();
                                         }
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(LoginActivity.this, "Error, credenciales incorrectas.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivityAdmin.this, "Error, credenciales incorrectas.", Toast.LENGTH_SHORT).show();
                                     }
 
                                 }
                             });
                 }else{
-                    Toast.makeText(LoginActivity.this, "Validaciones funcionando.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivityAdmin.this, "Validaciones funcionando.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegistroActivity.class));
-            }
-        });
+
         //UsuarioDAO.getInstancia().añadirFotoDePerfilALosUsuariosQueNoTienenFoto();
 
     }
@@ -171,7 +157,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void nextActivity(){
-        startActivity(new Intent(LoginActivity.this,MenuActivity.class));
+        startActivity(new Intent(LoginActivityAdmin.this,MenuActivityAdmin.class));
         finish();
     }
 

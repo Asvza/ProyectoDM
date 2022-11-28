@@ -47,5 +47,8 @@
     <string name="type_of_user">Tipo de usuario</string>
     <string name="edit_profile">Editar perfil</string>
     <string name="save">Guardar</string>
+    <string name="adminlog">Si Eres Administador Inicia Sesión Aqui ✓ </string>
+    <string name="AdminSpace">Login de Administradore</string>
+    <string name="ContactAdmin">Contactar Vendedor</string>
 
 </resources>
