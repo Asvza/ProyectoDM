@@ -41,11 +41,11 @@
     <string name="my_profile">Mon profil</string>
     <string name="settings">Réglages</string>
     <string name="log_out">Se déconnecter</string>
-    <string name="sorry_we_were_not_able">Désolé, nous n\'avons pas pu trouver ce que vous cherchiez.</string>
+    <string name="sorry_we_were_not_able">Désolé, nous n avons pas pu trouver ce que vous cherchiez.</string>
     <string name="change_language">Changer de langue</string>
     <string name="name">Nom</string>
     <string name="telephone">Téléphone</string>
-    <string name="type_of_user">Type d\'utilisateur</string>
+    <string name="type_of_user">Type d utilisateur</string>
     <string name="edit_profile">Editer le profil</string>
     <string name="save">Sauvegarder</string>
     <string name="adminlog">Si vous êtes un administrateur, connectez-vous ici✓ </string>

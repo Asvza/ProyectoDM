@@ -2,10 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/items"
     android:layout_margin="8dp"
     style="@style/CategoryCardStyle"
-    android:backgroundTint="#9A5ADB">
+    android:backgroundTint="#ECDBFF">
 
 <!--    TODO! Fix the view so the item name is at the top center and price is at the bottom center-->
     <RelativeLayout
@@ -27,7 +27,7 @@
             android:text="ITEM"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="#9A5ADB"
             android:id="@+id/clothes_text_view"/>
 
         <TextView

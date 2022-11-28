@@ -6,12 +6,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".Activity.DetailsActivity"
-    android:background="#9A5ADB"
+    android:background="@color/white"
     >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
 
@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="22dp"
             android:textSize="34sp"
             android:textStyle="bold"
             android:text="Dummy Text"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#9A5ADB"/>
 
         <TextView
             android:id="@+id/itemtype"
@@ -45,7 +45,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="4dp"
             android:text="Clothing Type"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/black"/>
 
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_marginTop="24dp"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:text="$Price" />
 
         <TextView
@@ -70,7 +70,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:text="Description"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/itemDescription"
@@ -80,7 +80,7 @@
             android:layout_marginLeft="30dp"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             android:textSize="16sp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/viewCounter"
@@ -89,8 +89,9 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="32dp"
             android:textSize="18sp"
+            android:textStyle="bold"
             android:text="Number of Views: "
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/ItemViews"
@@ -99,7 +100,7 @@
             android:layout_marginLeft="30dp"
             android:textSize="18sp"
             android:text="Dummy: "
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/black"/>
 
 
     </LinearLayout>

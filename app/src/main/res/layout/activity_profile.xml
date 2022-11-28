@@ -306,7 +306,7 @@
             android:text="@string/save"
             android:textColor="#71BEC2"
             android:textSize="18dp"
-            android:textStyle="bold"></Button>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
