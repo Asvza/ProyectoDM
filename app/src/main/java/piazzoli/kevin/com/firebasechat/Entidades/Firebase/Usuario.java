@@ -14,7 +14,7 @@ public class Usuario {
     private String correo;
     private long fechaDeNacimiento;
     private String genero;
-
+    private String telefono;
     public Usuario() {
     }
 
@@ -40,6 +40,14 @@ public class Usuario {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public long getFechaDeNacimiento() {

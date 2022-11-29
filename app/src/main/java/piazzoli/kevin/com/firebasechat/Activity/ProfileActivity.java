@@ -23,18 +23,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 import piazzoli.kevin.com.firebasechat.Persistencia.UsuarioDAO;
 import piazzoli.kevin.com.firebasechat.R;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private ImageView goBackBtn;
+    private Button goEditProfileBtn;
+    DatabaseReference databaseReference;
+    FirebaseDatabase firebaseDatabase;
 
-    private FirebaseUser user;
-    private DatabaseReference reference;
-
-    private String userID;
-
+    private TextView retName;
+    private TextView retrieveName;
+    private TextView retrieveEmail;
+    private TextView retrieveGender;
+    private TextView retrieveTelephone;
+    //private TextView retrieveDoB;
 
 
     @Override
@@ -42,17 +48,21 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Usuarios");
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Usuarios");
-        userID = user.getUid();
+        retName = findViewById(R.id.usernameTextView);
+        retrieveName = findViewById(R.id.fullName);
+        retrieveEmail = findViewById(R.id.emailAddress);
+        retrieveGender = findViewById(R.id.genderTV);
+        retrieveTelephone = findViewById(R.id.telephoneTV);
+       // retrieveDoB = findViewById(R.id.age);
 
-        final TextView fullNameTextView = (TextView) findViewById(R.id.fullName);
-        final TextView emailTextView = (TextView) findViewById(R.id.emailAddress);
-        final TextView userTextView = (TextView) findViewById(R.id.typeOfUser);
         goBackBtn = findViewById(R.id.goBackBtn);
+        goEditProfileBtn = findViewById(R.id.btnEditProfile);
+        getdata();
 
-       goBackBtn.setOnClickListener(new View.OnClickListener() {
+        goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, MenuActivity.class);
@@ -60,53 +70,39 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-
-
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        goEditProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                User userProfile = snapshot.getValue(User.class);
-
-                if (userProfile != null)
-                {
-
-                    String fullName = userProfile.fullName;
-                    String email = userProfile.email;
-                    String user = userProfile.user;
-                    fullNameTextView.setText(fullName);
-                    emailTextView.setText(email);
-                    userTextView.setText(user);
-
-                }
-            }
-
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ProfileActivity.this, "Something wrong happened", Toast.LENGTH_SHORT).show();
-
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+                startActivity(intent);
             }
         });
 
     }
+    String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    private void getdata(){
+        ValueEventListener addValueEventListener = databaseReference.child(userID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String nombre = dataSnapshot.child("nombre").getValue(String.class);
+                String email = dataSnapshot.child("correo").getValue(String.class);
+                String genero = dataSnapshot.child("genero").getValue(String.class);
+                String telefono = dataSnapshot.child("telefono").getValue(String.class);
+              //  String dayofbirth = dataSnapshot.child("fechaDeNacimiento").getVaue(long.class);
 
-    private void returnMenu(){
-        startActivity(new Intent(this, MenuActivity.class));
-        finish();
+                retrieveName.setText(nombre);
+                retrieveEmail.setText(email);
+                retName.setText(nombre);
+                retrieveGender.setText(genero);
+                retrieveTelephone.setText(telefono);
+              //  retrieveDoB.setText(dayofbirth);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProfileActivity.this, "Fallo en traer información", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(UsuarioDAO.getInstancia().isUsuarioLogeado()){
-            //el usuario esta logeado y hacemos algo
-        }else{
-            returnMenu();
-        }
-    }
-
-
 }
 

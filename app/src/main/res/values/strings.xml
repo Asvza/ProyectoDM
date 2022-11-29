@@ -49,5 +49,8 @@
     <string name="adminlog">If you are an administrator login here ✓ </string>
     <string name="AdminSpace">Administrators Login</string>
     <string name="ContactAdmin">Contact Seller</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="enter_your_telephone_number">Enter your telephone number</string>
 
 </resources>
