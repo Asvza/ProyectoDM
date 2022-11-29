@@ -51,6 +51,9 @@
     <string name="adminlog">Si vous êtes un administrateur, connectez-vous ici✓ </string>
     <string name="AdminSpace">Connexion des administrateurs</string>
     <string name="ContactAdmin">Contacter le vendeur</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="enter_your_telephone_number">Enter your telephone number</string>
 
 
 </resources>

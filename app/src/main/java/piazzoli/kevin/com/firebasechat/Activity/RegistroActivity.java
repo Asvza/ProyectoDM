@@ -56,6 +56,7 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText txtContraseña;
     private EditText txtContraseñaRepetida;
     private EditText txtFechaDeNacimiento;
+    private EditText txtTelefono;
     private RadioButton rdHombre;
     private RadioButton rdMujer;
     private Button btnRegistrar;
@@ -79,6 +80,7 @@ public class RegistroActivity extends AppCompatActivity {
         txtContraseña = findViewById(R.id.idRegistroContraseña);
         txtContraseñaRepetida = findViewById(R.id.idRegistroContraseñaRepetida);
         txtFechaDeNacimiento = findViewById(R.id.txtFechaDeNacimiento);
+        txtTelefono = findViewById(R.id.txtTelefono);
         rdHombre = findViewById(R.id.rdHombre);
         rdMujer = findViewById(R.id.rdMujer);
         btnRegistrar = findViewById(R.id.idRegistroRegistrar);
@@ -152,20 +154,13 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Calendar calendar = Calendar.getInstance();
+
                 DatePickerDialog datePickerDialog = new DatePickerDialog(RegistroActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int mes, int dia) {
-                        Calendar calendarResultado = Calendar.getInstance();
-                        calendarResultado.set(Calendar.YEAR,year);
-                        calendarResultado.set(Calendar.MONTH,mes);
-                        calendarResultado.set(Calendar.DAY_OF_MONTH,dia);
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-                        Date date = calendarResultado.getTime();
-                        String fechaDeNacimientoTexto = simpleDateFormat.format(date);
-                        fechaDeNacimiento = date.getTime();
-                        txtFechaDeNacimiento.setText(fechaDeNacimientoTexto);
+                        txtFechaDeNacimiento.setText(dia + "/" + (mes + 1) + "/" + year);
                     }
-                },calendar.get(Calendar.YEAR)-18,calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
+                },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
                 datePickerDialog.show();
             }
         });
@@ -177,6 +172,7 @@ public class RegistroActivity extends AppCompatActivity {
                 final String nombre = txtNombre.getText().toString();
                 if(isValidEmail(correo) && validarContraseña() && validarNombre(nombre)){
                     String contraseña = txtContraseña.getText().toString();
+                    String telefono = txtTelefono.getText().toString();
                     mAuth.createUserWithEmailAndPassword(correo, contraseña)
                             .addOnCompleteListener(RegistroActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -186,9 +182,9 @@ public class RegistroActivity extends AppCompatActivity {
                                         final String genero;
 
                                         if(rdHombre.isChecked()){
-                                            genero = "Hombre";
+                                            genero = "Femenino";
                                         }else{
-                                            genero = "Mujer";
+                                            genero = "Masculino";
                                         }
 
                                         if(fotoPerfilUri!=null) {
@@ -201,6 +197,7 @@ public class RegistroActivity extends AppCompatActivity {
                                                     usuario.setCorreo(correo);
                                                     usuario.setNombre(nombre);
                                                     usuario.setFechaDeNacimiento(fechaDeNacimiento);
+                                                    usuario.setTelefono(telefono);
                                                     usuario.setGenero(genero);
                                                     usuario.setFotoPerfilURL(url);
                                                     FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -216,6 +213,7 @@ public class RegistroActivity extends AppCompatActivity {
                                             usuario.setCorreo(correo);
                                             usuario.setNombre(nombre);
                                             usuario.setFechaDeNacimiento(fechaDeNacimiento);
+                                            usuario.setTelefono(telefono);
                                             usuario.setGenero(genero);
                                             usuario.setFotoPerfilURL(Constantes.URL_FOTO_POR_DEFECTO_USUARIOS);
                                             FirebaseUser currentUser = mAuth.getCurrentUser();

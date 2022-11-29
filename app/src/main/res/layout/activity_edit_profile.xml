@@ -22,15 +22,14 @@
             android:layout_alignParentLeft="true"/>
 
         <TextView
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/my_profile"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:layout_weight="1"
             android:gravity="center"
-            />
+            android:text="@string/edit_profile"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
     <LinearLayout
@@ -82,14 +81,16 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fullName"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Default"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:layout_marginStart="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"
+            android:hint="Default"/>
+
 
     </LinearLayout>
 
@@ -117,14 +118,16 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/genderTV"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextGender"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Default"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:layout_marginStart="15dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textColorHint="@color/black"
+            android:hint="Default"/>
+
 
     </LinearLayout>
 
@@ -152,51 +155,19 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/telephoneTV"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Default"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:layout_marginStart="15dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:textColorHint="@color/black"
+            android:hint="Default"/>
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/email_icon" />
-
-        <TextView
-            android:id="@+id/emailAddressTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="@string/email"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/emailAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Default"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -206,16 +177,16 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btnEditProfile"
+            android:id="@+id/btnSaveProfile"
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_marginLeft="-10dp"
             android:backgroundTint="#ECDBFF"
-            android:drawableLeft="@drawable/ic_baseline_edit_24"
+            android:drawableLeft="@drawable/ic_baseline_save_24"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:paddingLeft="10dp"
-            android:text="@string/edit_profile"
+            android:text="@string/save"
             android:textColor="#9A5ADB"
             android:textSize="18dp"
             android:textStyle="bold" />
