@@ -51,9 +51,9 @@ public class MenuActivityAdmin extends AppCompatActivity {
 
         cardVideollamada.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivityAdmin.this, VerUsuariosActivity.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                Intent i=getPackageManager().getLaunchIntentForPackage("com.cometchat.pro.androiduikit");
+                startActivity(i);
             }
         });
 

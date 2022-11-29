@@ -28,7 +28,7 @@ import piazzoli.kevin.com.firebasechat.R;
 public class MenuActivity extends AppCompatActivity {
 
     private CardView cardCompras;
-   // private CardView cardVideollamada;
+   private CardView cardVideollamada;
     private CardView cardPerfil;
     private CardView cardAjustes;
     private CardView cardCerrarSesion;
@@ -44,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         cardCompras = findViewById(R.id.cardCompras);
-        //cardVideollamada = findViewById(R.id.cardVideollamada);
+        cardVideollamada = findViewById(R.id.cardVideollamada);
         cardPerfil = findViewById(R.id.cardPerfil);
         cardAjustes = findViewById(R.id.cardAjustes);
         cardCerrarSesion = findViewById(R.id.cardCerrarsesion);
@@ -58,16 +58,24 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-    /* Se oculta las videollamadas y chat
+/*
         cardVideollamada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, VerUsuariosActivity.class);
+                Intent intent = getPackageManager().getLaunchIntentForPackage("package:com.android.camera2");
                 startActivity(intent);
+
             }
         });
-            */
+*/
 
+        cardVideollamada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=getPackageManager().getLaunchIntentForPackage("com.cometchat.pro.androiduikit");
+                startActivity(i);
+            }
+        });
 
         cardPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
