@@ -1,0 +1,147 @@
+Index: app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package piazzoli.kevin.com.firebasechat.Activity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.cardview.widget.CardView;\r\n\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.google.android.material.snackbar.Snackbar;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.database.DataSnapshot;\r\nimport com.google.firebase.database.DatabaseError;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\nimport com.google.firebase.database.ValueEventListener;\r\n\r\nimport piazzoli.kevin.com.firebasechat.Persistencia.UsuarioDAO;\r\nimport piazzoli.kevin.com.firebasechat.R;\r\n\r\npublic class MenuActivity extends AppCompatActivity {\r\n\r\n    private CardView cardCompras;\r\n   // private CardView cardVideollamada;\r\n    private CardView cardPerfil;\r\n    private CardView cardAjustes;\r\n    private CardView cardCerrarSesion;\r\n\r\n\r\n    private FirebaseUser user;\r\n    private DatabaseReference reference;\r\n    private String userID;\r\n\r\n    @Override\r\n    protected void onCreate(@Nullable Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_menu);\r\n\r\n        cardCompras = findViewById(R.id.cardCompras);\r\n        //cardVideollamada = findViewById(R.id.cardVideollamada);\r\n        cardPerfil = findViewById(R.id.cardPerfil);\r\n        cardAjustes = findViewById(R.id.cardAjustes);\r\n        cardCerrarSesion = findViewById(R.id.cardCerrarsesion);\r\n\r\n\r\n        cardCompras.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(MenuActivity.this, MainActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n    /* Se oculta las videollamadas y chat\r\n        cardVideollamada.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(MenuActivity.this, VerUsuariosActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n            */\r\n\r\n\r\n        cardPerfil.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(MenuActivity.this, ProfileActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        cardAjustes.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(MenuActivity.this, SettingsActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        cardCerrarSesion.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                FirebaseAuth.getInstance().signOut();\r\n                Intent intent = new Intent(MenuActivity.this, LoginActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        user = FirebaseAuth.getInstance().getCurrentUser();\r\n        reference = FirebaseDatabase.getInstance().getReference(\"Usuarios\");\r\n        userID = user.getUid();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivity.java b/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivity.java
+--- a/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivity.java	(revision 98ca06251bb2a0ca18cdc3e210a7f926f258915d)
++++ b/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivity.java	(date 1669672936252)
+@@ -28,7 +28,7 @@
+ public class MenuActivity extends AppCompatActivity {
+ 
+     private CardView cardCompras;
+-   // private CardView cardVideollamada;
++   private CardView cardVideollamada;
+     private CardView cardPerfil;
+     private CardView cardAjustes;
+     private CardView cardCerrarSesion;
+@@ -44,7 +44,7 @@
+         setContentView(R.layout.activity_menu);
+ 
+         cardCompras = findViewById(R.id.cardCompras);
+-        //cardVideollamada = findViewById(R.id.cardVideollamada);
++        cardVideollamada = findViewById(R.id.cardVideollamada);
+         cardPerfil = findViewById(R.id.cardPerfil);
+         cardAjustes = findViewById(R.id.cardAjustes);
+         cardCerrarSesion = findViewById(R.id.cardCerrarsesion);
+@@ -58,16 +58,24 @@
+             }
+         });
+ 
+-    /* Se oculta las videollamadas y chat
++/*
+         cardVideollamada.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                Intent intent = new Intent(MenuActivity.this, VerUsuariosActivity.class);
++                Intent intent = getPackageManager().getLaunchIntentForPackage("package:com.android.camera2");
+                 startActivity(intent);
++
+             }
+         });
+-            */
++*/
+ 
++        cardVideollamada.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                Intent i=getPackageManager().getLaunchIntentForPackage("com.cometchat.pro.androiduikit");
++                startActivity(i);
++            }
++        });
+ 
+         cardPerfil.setOnClickListener(new View.OnClickListener() {
+             @Override
+Index: app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivityAdmin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package piazzoli.kevin.com.firebasechat.Activity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\nimport androidx.annotation.Nullable;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.cardview.widget.CardView;\r\n\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\n\r\nimport piazzoli.kevin.com.firebasechat.R;\r\n\r\npublic class MenuActivityAdmin extends AppCompatActivity {\r\n\r\n    private CardView cardCompras;\r\n    private CardView cardVideollamada;\r\n    private CardView cardPerfil;\r\n    private CardView cardAjustes;\r\n    private CardView cardCerrarSesion;\r\n\r\n\r\n    private FirebaseUser user;\r\n    private DatabaseReference reference;\r\n    private String userID;\r\n\r\n    @Override\r\n    protected void onCreate(@Nullable Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_menu_admin);\r\n\r\n        cardCompras = findViewById(R.id.cardCompras);\r\n        cardVideollamada = findViewById(R.id.cardVideollamada);\r\n        cardPerfil = findViewById(R.id.cardPerfil);\r\n        cardAjustes = findViewById(R.id.cardAjustes);\r\n        cardCerrarSesion = findViewById(R.id.cardCerrarsesion);\r\n\r\n\r\n        cardCompras.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(MenuActivityAdmin.this, MainActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        cardVideollamada.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(MenuActivityAdmin.this, VerUsuariosActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        cardPerfil.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(MenuActivityAdmin.this, ProfileActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        cardAjustes.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(MenuActivityAdmin.this, SettingsActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        cardCerrarSesion.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                FirebaseAuth.getInstance().signOut();\r\n                Intent intent = new Intent(MenuActivityAdmin.this, LoginActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        user = FirebaseAuth.getInstance().getCurrentUser();\r\n        reference = FirebaseDatabase.getInstance().getReference(\"Usuarios\");\r\n        userID = user.getUid();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivityAdmin.java b/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivityAdmin.java
+--- a/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivityAdmin.java	(revision 98ca06251bb2a0ca18cdc3e210a7f926f258915d)
++++ b/app/src/main/java/piazzoli/kevin/com/firebasechat/Activity/MenuActivityAdmin.java	(date 1669672936228)
+@@ -51,9 +51,9 @@
+ 
+         cardVideollamada.setOnClickListener(new View.OnClickListener() {
+             @Override
+-            public void onClick(View v) {
+-                Intent intent = new Intent(MenuActivityAdmin.this, VerUsuariosActivity.class);
+-                startActivity(intent);
++            public void onClick(View view) {
++                Intent i=getPackageManager().getLaunchIntentForPackage("com.cometchat.pro.androiduikit");
++                startActivity(i);
+             }
+         });
+ 
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\n\r\nbuildscript {\r\n    repositories {\r\n        jcenter()\r\n        google()\r\n    }\r\n    dependencies {\r\n        classpath 'com.android.tools.build:gradle:7.3.1'\r\n        classpath 'com.google.gms:google-services:4.3.10'\r\n\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\n\r\nallprojects {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n        maven {\r\n            url \"https://github.com/jitsi/jitsi-maven-repository/raw/master/releases\"\r\n        }\r\n    }\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 98ca06251bb2a0ca18cdc3e210a7f926f258915d)
++++ b/build.gradle	(date 1669672936240)
+@@ -7,7 +7,7 @@
+     }
+     dependencies {
+         classpath 'com.android.tools.build:gradle:7.3.1'
+-        classpath 'com.google.gms:google-services:4.3.10'
++        classpath 'com.google.gms:google-services:4.3.14'
+ 
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/Clothes_space.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/Clothes_space.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.androidTest.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.androidTest.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.main.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.main.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.unitTest.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.unitTest.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision 98ca06251bb2a0ca18cdc3e210a7f926f258915d)
++++ b/.idea/modules.xml	(date 1669672936272)
+@@ -2,11 +2,11 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Clothes_space.iml" filepath="$PROJECT_DIR$/.idea/modules/Clothes_space.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.androidTest.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.main.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Clothes_space.app.unitTest.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProyectoDM.iml" filepath="$PROJECT_DIR$/.idea/modules/ProyectoDM.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.androidTest.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.main.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProyectoDM.app.unitTest.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Activity.DetailsActivity\"\r\n    android:background=\"@color/white\"\r\n    >\r\n\r\n\r\n\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"0dp\"\r\n        tools:context=\".MainActivity\"\r\n        android:id=\"@+id/main_activity\"\r\n        android:background=\"@color/white\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n\r\n            android:layout_height=\"wrap_content\"\r\n            android:padding=\"10dp\"\r\n            android:id=\"@+id/linear_ll\"\r\n            android:orientation=\"horizontal\"\r\n            android:background=\"#E2FBF4\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/goBackBtn\"\r\n                android:layout_width=\"18dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_alignParentLeft=\"true\"\r\n                android:src=\"@drawable/go_back_icon\" />\r\n\r\n            <TextView\r\n                android:layout_weight=\"1\"\r\n                android:layout_width=\"0dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Compras\"\r\n                android:textSize=\"20dp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"@color/black\"\r\n                android:gravity=\"center\"\r\n                />\r\n\r\n\r\n        </LinearLayout>\r\n\r\n        <SearchView\r\n            android:id=\"@+id/searchBar\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"60dp\"\r\n            android:iconifiedByDefault=\"true\"\r\n            android:queryHint=\"Buscar producto\"\r\n            app:iconTint=\"@color/black\"\r\n            >\r\n\r\n        </SearchView>\r\n\r\n\r\n        <TextView\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_below=\"@id/searchBar\"\r\n            android:gravity=\"center\"\r\n            android:layout_marginTop=\"16dp\"\r\n            android:textSize=\"20dp\"\r\n            android:textColor=\"#9A5ADB\"\r\n            android:textStyle=\"bold\"\r\n            android:text=\"¡Las mejores ofertas!\"\r\n            android:id=\"@+id/hot_deals_tag\"/>\r\n\r\n\r\n        <androidx.recyclerview.widget.RecyclerView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/hot_deals_tag\"\r\n            android:paddingTop=\"16dp\"\r\n            android:divider=\"@android:color/transparent\"\r\n            android:dividerHeight=\"10sp\"\r\n            android:id=\"@+id/top_picks\"\r\n            android:paddingBottom=\"8dp\"\r\n            android:textColor=\"@color/black\" >\r\n\r\n\r\n        </androidx.recyclerview.widget.RecyclerView>\r\n\r\n\r\n        <androidx.cardview.widget.CardView\r\n            android:id=\"@+id/cardTShirts\"\r\n            style=\"@style/CategoryCardStyle\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"30dp\"\r\n            android:layout_marginEnd=\"30dp\"\r\n            android:layout_marginTop=\"80dp\"\r\n            android:layout_below=\"@id/top_picks\"\r\n            android:backgroundTint=\"#C494D1\">\r\n\r\n\r\n            <TextView\r\n                style=\"@style/TextViewsCategory\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center|right\"\r\n                android:paddingRight=\"65dp\"\r\n                android:text=\"Paca Playeras\"\r\n                android:textSize=\"19sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"@color/white\"/>\r\n\r\n            <ImageView\r\n                android:layout_width=\"140dp\"\r\n                android:layout_height=\"90dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:src=\"@drawable/tshirt_tn\"/>\r\n        </androidx.cardview.widget.CardView>\r\n\r\n\r\n        <androidx.cardview.widget.CardView\r\n            android:id=\"@+id/cardJackets\"\r\n            style=\"@style/CategoryCardStyle\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/cardTShirts\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginStart=\"30dp\"\r\n            android:layout_marginEnd=\"30dp\"\r\n            android:backgroundTint=\"#C494D1\">\r\n\r\n            <TextView\r\n                style=\"@style/TextViewsCategory\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center|right\"\r\n                android:paddingRight=\"40dp\"\r\n                android:text=\"Paca Chamarras\"\r\n                android:textSize=\"19sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"@color/white\"/>\r\n\r\n            <ImageView\r\n                android:layout_width=\"140dp\"\r\n                android:layout_height=\"90dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:src=\"@drawable/jacket_tn\"\r\n                />\r\n\r\n        </androidx.cardview.widget.CardView>\r\n\r\n\r\n        <androidx.cardview.widget.CardView\r\n            android:id=\"@+id/cardPants\"\r\n            style=\"@style/CategoryCardStyle\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/cardJackets\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginBottom=\"10dp\"\r\n            android:layout_marginStart=\"30dp\"\r\n            android:layout_marginEnd=\"30dp\"\r\n            android:backgroundTint=\"#C494D1\">\r\n\r\n            <TextView\r\n                style=\"@style/TextViewsCategory\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center|right\"\r\n                android:paddingRight=\"45dp\"\r\n                android:text=\"Paca Pantalones\"\r\n                android:textSize=\"19sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"@color/white\"/>\r\n\r\n            <ImageView\r\n                android:layout_width=\"140dp\"\r\n                android:layout_height=\"90dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:src=\"@drawable/pant_tn\" />\r\n        </androidx.cardview.widget.CardView>\r\n\r\n\r\n    </RelativeLayout>\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 98ca06251bb2a0ca18cdc3e210a7f926f258915d)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1669672936283)
+@@ -31,8 +31,8 @@
+ 
+             <ImageView
+                 android:id="@+id/goBackBtn"
+-                android:layout_width="18dp"
+-                android:layout_height="30dp"
++                android:layout_width="12dp"
++                android:layout_height="21dp"
+                 android:layout_alignParentLeft="true"
+                 android:src="@drawable/go_back_icon" />
+ 
